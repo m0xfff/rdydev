@@ -41,9 +41,9 @@ jobs:
         echo "### RSpec results" >> $GITHUB_STEP_SUMMARY
         echo "This section will only list failures. For a more detailed report, see the 'rspec-results' artifact." >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
-        echo "```" >> $GITHUB_STEP_SUMMARY
+        echo '```' >> $GITHUB_STEP_SUMMARY
         bundle exec rspec --format failures --format html --out tmp/rspec-results.html -b --deprecation-out tmp/rspec-deprecations.txt >> $GITHUB_STEP_SUMMARY 2>&1
-        echo "```" >> $GITHUB_STEP_SUMMARY
+        echo '```' >> $GITHUB_STEP_SUMMARY
     
     - name: Save test artifacts
       if: always()
