@@ -13,7 +13,7 @@
   // This can be used to network with other containers or the host.
   "forwardPorts": [3000],
 
-  "initializeCommand": "sudo chmod 644 .devcontainer/config --recursive",
+  // "initializeCommand": "sudo chmod 644 .devcontainer/config --recursive",
 
   // Use 'postCreateCommand' to run commands after the container is created.
   "postCreateCommand": "bundle install && bundle e rake db:setup",

@@ -14,6 +14,8 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 # [Optional] Uncomment this line to install additional gems.
 RUN gem install 'nokogiri:1.13.10' 'rails:4.2.11.3'
 
+COPY --chmod=664 ./.devcontainer/my.cnf /etc/mysql/my.cnf
+
 # [Optional] Uncomment this line to install global node packages.
 # RUN su vscode -c "source /usr/local/share/nvm/nvm.sh && npm install -g <your-package-here>" 2>&1
 
