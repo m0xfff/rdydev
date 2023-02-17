@@ -8,7 +8,6 @@ services:
 
     volumes:
       - ../..:/workspaces:cached
-      - ./config/my.cnf.client:/etc/mysql/my.cnf
       # - /var/run/docker.sock:/var/run/docker.sock
 
     depends_on:
@@ -26,14 +25,12 @@ services:
   db:
     image: mysql:8
     restart: unless-stopped
+    command: mysqld --default-authentication-plugin=mysql_native_password --bind-address="0.0.0.0"
     volumes:
       # - mysql-data-volume:/var/lib/mysql
-      - ./config/my.cnf.server:/etc/mysql/my.cnf
       - ./scripts/init.sql:/docker-entrypoint-initdb.d/init.sql
     environment:
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_USER: mysql
-      MYSQL_PASSWORD: mysql
       # Your config/database.yml should use the user and password you set here,
       # and host "db" (as that's the name of this service). You can use whatever
       # database name you want. Use `bin/rails db:prepare` to create the database.
