@@ -1,9 +1,10 @@
 name: main
-on: [push, pull_request]
+on: [push]
 
 env:
   RAILS_ENV: test
   RACK_ENV: test
+  COVERAGE: true
   DATABASE_HOST: 127.0.0.1
   DATABASE_USERNAME: root
   DATABASE_PASSWORD: password
@@ -38,8 +39,11 @@ jobs:
     - name: Run RSpec tests
       run: |
         echo "### RSpec results" >> $GITHUB_STEP_SUMMARY
-        echo "For a more detailed report, see the 'rspec-results.html' artifact." >> $GITHUB_STEP_SUMMARY
+        echo "This section will only list failures. For a more detailed report, see the 'rspec-results' artifact." >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo '```' >> $GITHUB_STEP_SUMMARY
         bundle exec rspec --format failures --format html --out tmp/rspec-results.html -b --deprecation-out tmp/rspec-deprecations.txt >> $GITHUB_STEP_SUMMARY 2>&1
+        echo '```' >> $GITHUB_STEP_SUMMARY
     
     - name: Save test artifacts
       if: always()
@@ -49,3 +53,10 @@ jobs:
         path: |
           tmp/rspec-results.html
           tmp/rspec-deprecations.txt
+
+    - name: Coverage
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: coverage
+        path: coverage
