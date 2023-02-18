@@ -7,7 +7,10 @@
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 
   // Features to add to the dev container. More info: https://containers.dev/features.
-  // "features": {},
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": { "version": "2.39.1" },
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // This can be used to network with other containers or the host.
@@ -34,25 +37,10 @@
       "settings": {
         "sqltools.connections": [
           {
-            "name": "Development Database",
+            "name": "Application Database",
             "driver": "MySQL",
             "previewLimit": 50,
             "server": "db",
-            "database": "app_development",
-            "port": 3306,
-            "username": "vscode",
-            "password": "vscode",
-            "askForPassword": false,
-            "mysqlOptions": {
-              "authProtocol": "default"
-            }
-          },
-          {
-            "name": "Test Database",
-            "driver": "MySQL",
-            "previewLimit": 50,
-            "server": "db",
-            "database": "app_test",
             "port": 3306,
             "username": "vscode",
             "password": "vscode",

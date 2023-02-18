@@ -14,28 +14,8 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 # [Optional] Uncomment this line to install additional gems.
 RUN gem install 'nokogiri:1.13.10' 'rails:4.2.11.3'
 
+# This section copies the mysql client configuration to the dev container so the user doesn't have to pass the mysql username & password each time
 COPY --chmod=664 ./.devcontainer/my.cnf /etc/mysql/my.cnf
 
 # [Optional] Uncomment this line to install global node packages.
 # RUN su vscode -c "source /usr/local/share/nvm/nvm.sh && npm install -g <your-package-here>" 2>&1
-
-# [Optional] Docker
-# RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-#     && apt-get -y install --no-install-recommends \
-#         ca-certificates \
-#         curl \
-#         gnupg \
-#         lsb-release
-
-# RUN mkdir -m 0755 -p /etc/apt/keyrings \
-#     && curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-
-# RUN echo \
-#     "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
-#     $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-
-# RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-#     && apt-get -y install --no-install-recommends \
-#     docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-
-# RUN usermod -aG docker vscode
