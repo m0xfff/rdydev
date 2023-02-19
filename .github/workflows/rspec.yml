@@ -1,4 +1,4 @@
-name: main
+name: RSpec
 on: [push]
 
 env:
@@ -10,7 +10,8 @@ env:
   DATABASE_PASSWORD: password
 
 jobs:
-  test:
+  rspec:
+
     runs-on: ubuntu-latest
 
     services:
@@ -25,18 +26,15 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Set up Ruby 2.6
+    - name: Setup Ruby
       uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: '2.6.10'
 
-    - name: Install dependencies & configure database
+    - name: Build
       run: |
         gem install bundler -v 1.17
-        bundle install --jobs 4 --retry 3
-        bundle exec rake db:setup
+        bundle install --jobs 4 --retry 3 && bundle e rake db:setup
 
-    - name: Run RSpec tests
+    - name: Run RSpec
       run: |
         echo "### RSpec results" >> $GITHUB_STEP_SUMMARY
         echo "This section will only list failures. For a more detailed report, see the 'rspec-results' artifact." >> $GITHUB_STEP_SUMMARY
@@ -45,7 +43,7 @@ jobs:
         RUBYOPT="-W0" bundle exec rspec --format failures --format html --out tmp/rspec-results.html -b --deprecation-out tmp/rspec-deprecations.txt >> $GITHUB_STEP_SUMMARY 2>&1
         echo '```' >> $GITHUB_STEP_SUMMARY
     
-    - name: Save test artifacts
+    - name: Save RSpec Artifacts
       if: always()
       uses: actions/upload-artifact@v3
       with:
@@ -54,7 +52,7 @@ jobs:
           tmp/rspec-results.html
           tmp/rspec-deprecations.txt
 
-    - name: Coverage
+    - name: Save Coverage Artifacts
       if: always()
       uses: actions/upload-artifact@v3
       with:
