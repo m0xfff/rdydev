@@ -12,5 +12,6 @@ class ApplicationController < ActionController::Base
     puts "like"
     puts "this"
     puts "and this"
+    puts "and this"
   end
 end
