@@ -12,19 +12,14 @@ jobs:
       - run: |
           git fetch --no-tags --prune --depth=10 origin +refs/heads/*:refs/remotes/origin/*
 
-      - name: Setup Ruby 2.6
+      - name: Setup Ruby
         uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '2.6.10'
 
-      - name: Setup pronto
-        run: |
-          gem install faraday-retry
-          gem install octokit -v 4.25.1
-          gem install pronto pronto-rubocop pronto-reek
+      - name: Setup Pronto
+        run: gem install pronto pronto-rubocop pronto-reek
 
       - name: Run Pronto
-        run: pronto run -f github_pr_review -c origin/${{ github.base_ref }}
+        run: pronto run -f github_status github_pr_review -c origin/${{ github.base_ref }}
         env:
           PRONTO_PULL_REQUEST_ID: ${{ github.event.pull_request.number }}
           PRONTO_GITHUB_ACCESS_TOKEN: "${{ github.token }}"
