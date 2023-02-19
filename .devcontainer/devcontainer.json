@@ -32,7 +32,7 @@
   // This command is the last of three that finalizes container setup when a dev container is 
   // created. It happens after updateContentCommand and once the dev container has been assigned
   // to a user for the first time.
-  "postCreateCommand": "bundle install && bundle e rake db:setup",
+  "postCreateCommand": "bundle install && wait-for-it db:3306 -t 30 && bundle e rake db:setup || echo \"MySQL server is unresponsive.\n\"",
 
   // Use 'postStartCommand' to run commands after the container is started.
   // "postStartCommand": "",
