@@ -15,7 +15,20 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
 
+      - name: Find gem path
+        id: gem-path
+        run: echo "::set-output name=path::$(gem env gemdir)"
+
+      - name: Cache gems
+        id: cache-gems
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.gem-path.outputs.path }}
+          key: ${{ runner.os }}-gems-${{ hashFiles(find ${{ steps.gem-path.outputs.path }} -type f -print0 | xargs -0 md5sum) }}
+          restore-keys: ${{ runner.os }}-gems-
+
       - name: Setup Pronto
+        if: steps.cache-gems.outputs.cache-hit != 'true'
         run: |
           gem install octokit -v 4.25.1
           gem install pronto pronto-brakeman pronto-flay pronto-reek
