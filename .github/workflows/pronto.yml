@@ -16,7 +16,8 @@ jobs:
         uses: ruby/setup-ruby@v1
 
       - name: Setup Pronto
-        run: gem install pronto pronto-rubocop pronto-reek
+        run: |
+          gem install pronto pronto-rubocop pronto-reek
 
       - name: Run Pronto
         run: pronto run -f github_status github_pr_review -c origin/${{ github.base_ref }}
