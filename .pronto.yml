@@ -1,5 +1,4 @@
 all:
   exclude:
     - 'spec/**/**'
-github_pr_review:
-  format: "%{runner}: %{msg}"
+format: "%{runner}: %{msg}"
