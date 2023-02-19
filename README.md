@@ -1,5 +1,5 @@
 # rdydev
-![develop](https://github.com/m0xfff/rdyDEV/actions/workflows/rspec.yml/badge.svg?branch=develop)
+![develop](https://github.com/m0xfff/rdydev/actions/workflows/rspec.yml/badge.svg?branch=develop)
 
 This project is aimed at onboarding developers onto Ruby on Rails development. The *mySMS* project is a student management system that allows the user to perform various CRUD (Create, Read, Update, and Delete) operations on students and their related data.
 
