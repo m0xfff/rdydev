@@ -1,6 +1,9 @@
 name: Pronto
 on: [pull_request]
 
+env:
+  GITHUB_ACTOR: pronto
+
 jobs:
   pronto:
 
@@ -18,10 +21,10 @@ jobs:
       - name: Setup Pronto
         run: |
           gem install octokit -v 4.25.1
-          gem install pronto pronto-rubocop pronto-reek
+          gem install pronto pronto-brakeman pronto-flay pronto-reek pronto-rubocop
 
       - name: Run Pronto
         run: pronto run -f github_status github_pr_review -c origin/${{ github.base_ref }}
         env:
           PRONTO_PULL_REQUEST_ID: ${{ github.event.pull_request.number }}
-          PRONTO_GITHUB_ACCESS_TOKEN: "${{ github.token }}"
+          PRONTO_GITHUB_ACCESS_TOKEN: "${{ secrets.PRONTO_GITHUB_ACCESS_TOKEN }}"
