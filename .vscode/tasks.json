@@ -8,21 +8,21 @@
       "showReuseMessage": true
     },
     "tasks": [
-      {
-        "label": "Create terminals",
-        "dependsOn": [
-          "database",
-          "server",
-          "console"
-        ],
-        "group": {
-          "kind": "build",
-          "isDefault": true
-        },
-        "runOptions": {
-          "runOn": "folderOpen"
-        }
-      },
+      // {
+      //   "label": "Create terminals",
+      //   "dependsOn": [
+      //     "database",
+      //     "server",
+      //     "console"
+      //   ],
+      //   "group": {
+      //     "kind": "build",
+      //     "isDefault": true
+      //   },
+      //   "runOptions": {
+      //     "runOn": "folderOpen"
+      //   }
+      // },
       {
         "label": "server",
         "type": "shell",
