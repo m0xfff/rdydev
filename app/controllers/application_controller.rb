@@ -11,5 +11,6 @@ class ApplicationController < ActionController::Base
     puts "doesn't"
     puts "like"
     puts "this"
+    puts "and this"
   end
 end
