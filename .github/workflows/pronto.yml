@@ -1,6 +1,9 @@
 name: Pronto
 on: [pull_request]
 
+env:
+  GITHUB_ACTOR: pronto
+
 jobs:
   pronto:
 
