@@ -18,8 +18,8 @@ gem "jbuilder", "~> 2.0"
 gem "sdoc", "~> 1.0.0", group: :doc
 # rail 2.7.7 drops support for BigDecimal which Rails 4.2 still needs
 gem 'bigdecimal', '1.4.2'
-# psych >5 breaks something
-gem "psych", ">=4.0.0", "<5.0.0", group: :doc
+# rdoc >=6.4 introduces psych which breaks things
+gem "rdoc", "~> 6.3.3", group: :doc
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
