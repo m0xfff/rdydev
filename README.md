@@ -1,5 +1,6 @@
 # rdydev
 ![develop](https://github.com/m0xfff/rdydev/actions/workflows/rspec.yml/badge.svg?branch=develop)
+[![Ruby Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://github.com/testdouble/standard)
 
 This project is aimed at onboarding developers onto Ruby on Rails development. The *mySMS* project is a student management system that allows the user to perform various CRUD (Create, Read, Update, and Delete) operations on students and their related data.
 
@@ -9,7 +10,7 @@ This project is aimed at onboarding developers onto Ruby on Rails development. T
 - MySQL documentation: https://dev.mysql.com/doc/
 
 ## Getting Started
-To get started with this project, you can create a repository using this repository *rdyDEV* as a template. Once you have created your repository, you can edit the project using GitHub Codespaces, which allows you to develop and test your code in the cloud. You can also clone the repository to your local machine and work on it there, but GitHub Codespaces is recommended as abstracts away the nitty gritty details of managing your development environment.
+To get started with this project, you can create a repository using this repository *rdydev* as a template. Once you have created your repository, you can edit the project using GitHub Codespaces, which allows you to develop and test your code in the cloud. You can also clone the repository to your local machine and work on it there, but GitHub Codespaces is recommended as abstracts away the nitty gritty details of managing your development environment.
 
 To edit the project using GitHub Codespaces:
 
