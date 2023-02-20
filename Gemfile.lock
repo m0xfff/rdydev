@@ -114,6 +114,7 @@ GEM
     parser (3.2.1.0)
       ast (~> 2.4.1)
     path_expander (1.1.1)
+    prettier_print (1.2.0)
     pronto (0.11.1)
       gitlab (>= 4.4.0, < 5.0)
       httparty (>= 0.13.7, < 1.0)
@@ -205,6 +206,10 @@ GEM
     rubocop-performance (1.15.2)
       rubocop (>= 1.7.0, < 2.0)
       rubocop-ast (>= 0.4.0)
+    ruby-lsp (0.4.0)
+      language_server-protocol (~> 3.17.0)
+      sorbet-runtime
+      syntax_tree (>= 6, < 7)
     ruby-progressbar (1.11.0)
     ruby2_keywords (0.0.5)
     ruby_parser (3.19.2)
@@ -224,6 +229,7 @@ GEM
       simplecov_json_formatter (~> 0.1)
     simplecov-html (0.12.3)
     simplecov_json_formatter (0.1.4)
+    sorbet-runtime (0.5.10676)
     sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -235,6 +241,8 @@ GEM
       language_server-protocol (~> 3.17.0.2)
       rubocop (= 1.44.1)
       rubocop-performance (= 1.15.2)
+    syntax_tree (6.0.0)
+      prettier_print (>= 1.2.0)
     terminal-table (3.0.2)
       unicode-display_width (>= 1.1.1, < 3)
     thor (1.2.1)
@@ -271,6 +279,7 @@ DEPENDENCIES
   rails (= 4.2.11.3)
   rdoc (~> 6.3.3)
   rspec-rails (~> 3.9.1)
+  ruby-lsp
   sdoc (~> 1.0.0)
   shoulda-matchers (~> 4.5.1)
   simplecov

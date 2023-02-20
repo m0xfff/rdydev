@@ -1,0 +1,9 @@
+fix: true               # default: false
+parallel: false         # default: false
+format: Standard::Formatter # default: Standard::Formatter
+ruby_version: 2.3
+
+ignore:                 # default: []
+  - 'db/schema.rb'
+  - 'bin/**/*'
+  
