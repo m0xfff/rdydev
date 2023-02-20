@@ -7,8 +7,6 @@
 
   // Features to add to the dev container. More info: https://containers.dev/features.
   "features": {
-    // "ghcr.io/devcontainers/features/git:1": { "version": "2.39.1" },
-    // "ghcr.io/devcontainers/features/github-cli:1": {},
     "ghcr.io/devcontainers/features/ruby:1": { "version": "2.7.7" },
     "ghcr.io/devcontainers/features/node:1": { "version": "lts" }
   },
