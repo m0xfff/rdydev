@@ -7,8 +7,10 @@
 
   // Features to add to the dev container. More info: https://containers.dev/features.
   "features": {
-    "ghcr.io/devcontainers/features/git:1": { "version": "2.39.1" },
-    "ghcr.io/devcontainers/features/github-cli:1": {}
+    // "ghcr.io/devcontainers/features/git:1": { "version": "2.39.1" },
+    // "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/ruby:1": { "version": "2.7.7" },
+    "ghcr.io/devcontainers/features/node:1": { "version": "lts" }
   },
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
@@ -21,7 +23,7 @@
   // This command is the first of three (along with updateContentCommand and postCreateCommand)
   // that finalizes container setup when a dev container is created. It and subsequent commands
   // execute inside the container immediately after it has started for the first time.
-  // "onCreateCommand": "",
+  "onCreateCommand": "gem install bundler -v 1.17.3",
 
   // This command is the second of three that finalizes container setup when a dev container is
   // created. It executes inside the container after onCreateCommand whenever new content is
