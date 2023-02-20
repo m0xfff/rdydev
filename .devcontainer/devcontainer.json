@@ -72,7 +72,8 @@
           }
         ],
         "gitlens.showWelcomeOnInstall": false,
-        "gitlens.showWhatsNewAfterUpgrades": false
+        "gitlens.showWhatsNewAfterUpgrades": false,
+        "standardRuby.mode": "enableViaGemfile"
       }
     }
   },
