@@ -30,6 +30,12 @@ jobs:
       uses: ruby/setup-ruby@v1
       with:
         bundler-cache: true
+    
+    - name: Wait for Service
+      run: |
+        wget https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh
+        chmod +x wait-for-it.sh
+        ./wait-for-it.sh 127.0.0.1:3306 --timeout=30 --strict --quiet
 
     - name: Setup Database
       run: bundle exec rake db:setup
