@@ -30,6 +30,18 @@ gem "rdoc", "~> 6.3.3", group: :doc
 # rail 2.7.7 drops support for BigDecimal.new which Rails 4.2 still needs
 gem "bigdecimal", "1.4.2"
 
+# For debugging performance issues
+gem "rack-mini-profiler"
+
+# For memory profiling
+gem "memory_profiler"
+
+# For call-stack profiling flamegraphs
+gem "stackprof"
+
+# For benchmarking
+gem "benchmark-ips"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

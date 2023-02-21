@@ -1,0 +1,12 @@
+{
+  "name": "rdydev",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/m0xfff/rdydev",
+  "author": "rdydev",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "speedscope": "^1.15.0"
+  }
+}
