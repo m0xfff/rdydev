@@ -30,11 +30,6 @@ jobs:
       uses: ruby/setup-ruby@v1
       with:
         bundler-cache: true
-
-    - name: Install Dependencies
-      run: |
-        gem install bundler -v 1.17.3
-        bundle install --jobs 4 --retry 3
     
     - name: Wait for Service
       run: |
