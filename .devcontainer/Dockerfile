@@ -2,7 +2,7 @@ FROM mcr.microsoft.com/vscode/devcontainers/base:bullseye
 
 # [Optional] Uncomment this section to install additional OS packages.
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends build-essential default-libmysqlclient-dev default-mysql-client wait-for-it
+    && apt-get -y install --no-install-recommends build-essential cmake default-libmysqlclient-dev default-mysql-client wait-for-it
 
 # [Optional] Uncomment this line to install additional gems.
 # RUN gem install <your-package-here>

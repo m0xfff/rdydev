@@ -1,0 +1,35 @@
+{
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "sqltools.connections": [
+    {
+      "name": "Application Database",
+      "driver": "MySQL",
+      "previewLimit": 50,
+      "server": "db",
+      "port": 3306,
+      "username": "vscode",
+      "password": "vscode",
+      "askForPassword": false,
+      "mysqlOptions": {
+        "authProtocol": "default"
+      }
+    }
+  ],
+  "gitlens.showWelcomeOnInstall": false,
+  "gitlens.showWhatsNewAfterUpgrades": false,
+  "standardRuby.mode": "enableViaGemfile",
+  "rubyLsp.rubyVersionManager": "rvm",
+  "rubyLsp.enabledFeatures": {
+    "documentHighlights": true,
+    "documentSymbols": true,
+    "foldingRanges": true,
+    "selectionRanges": true,
+    "semanticHighlighting": true,
+    "formatting": true,
+    "diagnostics": true,
+    "codeActions": true
+  },
+  "[ruby]": {
+    "editor.defaultFormatter": "testdouble.vscode-standard-ruby"
+  },
+}

@@ -1,0 +1,32 @@
+// cSpell Settings
+{
+  // Version of the setting file.  Always 0.2
+  "version": "0.2",
+  // language - current active spelling language
+  "language": "en",
+  // words - list of words to be always considered correct
+  "words": [
+    "devcontainers",
+    "rdy",
+    "rdydev",
+    "rubocop"
+  ],
+
+  // Specify paths/files to ignore.
+  "ignorePaths": [
+    "node_modules",        // this will ignore anything the node_modules directory
+    "**/node_modules",     // the same for this one
+    "**/node_modules/**",  // the same for this one
+    "node_modules/**",     // Doesn't currently work due to how the current working directory is determined.
+    "vscode-extension",    //
+    ".git",                // Ignore the .git directory
+    ".vscode",             // Ignore the .vscode directory
+    ".devcontainer",       // Ignore the .devcontainer directory
+    "cspell.json",         // Ignore the cspell.json file
+    "Gemfile",             // Ignore the Gemfile file
+    "Gemfile.lock"         // Ignore the Gemfile.lock file
+  ],
+
+  // flagWords - list of words to be always considered incorrect
+  "flagWords": ["enrollment"]
+}

@@ -46,33 +46,15 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "rebornix.ruby",
         "mtxr.sqltools",
         "mtxr.sqltools-driver-mysql",
         "eamodio.gitlens",
-        "donjayamanne.githistory",
-        "connorshea.vscode-ruby-test-adapter"
-      ],
-      "settings": {
-        "terminal.integrated.defaultProfile.linux": "zsh",
-        "sqltools.connections": [
-          {
-            "name": "Application Database",
-            "driver": "MySQL",
-            "previewLimit": 50,
-            "server": "db",
-            "port": 3306,
-            "username": "vscode",
-            "password": "vscode",
-            "askForPassword": false,
-            "mysqlOptions": {
-              "authProtocol": "default"
-            }
-          }
-        ],
-        "gitlens.showWelcomeOnInstall": false,
-        "gitlens.showWhatsNewAfterUpgrades": false
-      }
+        "connorshea.vscode-ruby-test-adapter",
+        "testdouble.vscode-standard-ruby",
+        "GitHub.copilot",
+        "Shopify.ruby-lsp",
+        "streetsidesoftware.code-spell-checker"
+      ]
     }
   },
 
