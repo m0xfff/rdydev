@@ -38,7 +38,7 @@ jobs:
         ./wait-for-it.sh 127.0.0.1:3306 --timeout=30 --strict --quiet
 
     - name: Setup Database
-      run: bundle exec rake db:setup
+      run: RUBYOPT="-W0" bundle exec rake db:setup
 
     - name: Run RSpec
       run: |
