@@ -15,6 +15,10 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+if ENV["BOOT_PROFILE"]
+  StackProf.start(mode: ENV["BOOT_PROFILE"].to_sym, raw: true)
+end
+
 module RDY
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
