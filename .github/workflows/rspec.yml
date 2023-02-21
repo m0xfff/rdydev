@@ -32,7 +32,9 @@ jobs:
         bundler-cache: true
 
     - name: Index Bundler Gems
-      run: bundle --full-index
+      run: |
+        bundle --full-index
+        bundle exec gem pristine mysql2
     
     - name: Wait for Service
       run: |
