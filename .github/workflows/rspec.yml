@@ -30,6 +30,9 @@ jobs:
       uses: ruby/setup-ruby@v1
       with:
         bundler-cache: true
+
+    - name: Pristine mysql2
+      run: bundle exec gem pristine mysql2
     
     - name: Wait for Service
       run: |
