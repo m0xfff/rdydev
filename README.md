@@ -8,6 +8,27 @@ For the onboarding project, you'll be building your own student management syste
 
 Each issue should provide some *background* on why it is important & what the desired outcome is, it should outline the specific *requirements* of the issue i.e. the work to be done, & finally the specific *acceptance criteria* that needs to be met in order for the issue to be considered complete.
 
+## Table of contents
+
+- [Prerequisites](#prerequisites)
+- [Getting started](#getting-started)
+  - [Configuration](#configuration)
+  - [Opening the project in Github Codespaces](#opening-the-project-in-github-codespaces)
+    - [with Visual Studio Code on Desktop](#with-visual-studio-code-on-desktop)
+  - [Kickoff](#kickoff)
+- [Working in the project](#working-in-the-project)
+  - [Github Actions](#github-actions)
+- [Basic Rails Tools](#basic-rails-tools)
+  - [Bundler](#bundler)
+  - [Rails](#rails)
+  - [Rake](#rake)
+  - [MySQL](#mysql)
+- [Advanced Tools](#advanced-tools)
+  - [Language Servers](#language-servers)
+  - [Profiling Tools](#profiling-tools)
+    - [Memory profiling](#memory-profiling)
+    - [Call-stack profiling](#call-stack-profiling)
+
 ## Prerequisites
 
 Before you begin working on the onboarding project, you will need to have the following:
