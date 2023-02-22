@@ -2,11 +2,9 @@
 ![develop](https://github.com/m0xfff/rdydev/actions/workflows/rspec.yml/badge.svg?branch=develop)
 [![Ruby Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://github.com/testdouble/standard)
 
-Welcome to our Rails onboarding repository! This repository has been created to help developers build skills with the tools & the software development lifecycle they'll be using in their role.
+Welcome to our Rails onboarding project! This project was created to help developers build skills with the tools & the software development lifecycle they'll be using in their role. In this project, you'll be building your own student management system. The project has been divided into **issues**, issues are what we use to track progress and divide work among team members.
 
-For the onboarding project, you'll be building your own student management system (SMS). The project has been divided into *issues*, issues are used to track progress and divide work among team members.
-
-Each issue should provide some *background* on why it is important & what the desired outcome is, it should outline the specific *requirements* of the issue i.e. the work to be done, & finally the specific *acceptance criteria* that needs to be met in order for the issue to be considered complete.
+Each issue should provide some **background** on why it is important & what the desired outcome is, it should outline the specific **requirements** of the issue i.e. the work to be done, & finally the specific **acceptance criteria** that needs to be met in order for the issue to be considered complete.
 
 ## Table of contents
 
@@ -36,7 +34,7 @@ Before you begin working on the onboarding project, you will need to have the fo
 - An SSH key: You will need to have created an SSH key and added it to your Github account. If you haven't done this yet, you can [follow these instructions](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) to generate a new SSH key and add it to your Github account.
 - A signing key: You will also need to have configured a signing key for the purpose of signing your commits. If you haven't done this yet, you can [follow these instructions](https://docs.github.com/en/authentication/managing-commit-signature-verification) to generate a new GPG key and configure it for use with Github.
 
-Once you have completed these steps, you are ready to begin working on the onboarding project!
+Once you have completed these steps, you are ready to begin!
 
 ## Getting started
 
