@@ -19,7 +19,7 @@ Once you have completed these steps, you are ready to begin working on the onboa
 
 ## Getting started
 
-To get started with the onboarding project, you will need to fork the repository to your own Github account. To do this, simply click the "Fork" button in the upper right corner of the repository page. When creating a fork of this project you shouldn't have to change any of the defaults, however, make sure the *Owner* is your own Github account.
+To get started, you will need to [fork the repository to your own Github account](https://github.com/m0xfff/rdydev/fork).
 
 ### Configuration
 
