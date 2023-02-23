@@ -13,19 +13,8 @@ Each issue should provide some **background** on why it is important & what the 
   - [Configuration](#configuration)
   - [Opening the project in Github Codespaces](#opening-the-project-in-github-codespaces)
     - [with Visual Studio Code on Desktop](#with-visual-studio-code-on-desktop)
-  - [Kickoff](#kickoff)
 - [Working in the project](#working-in-the-project)
   - [Github Actions](#github-actions)
-- [Basic Rails Tools](#basic-rails-tools)
-  - [Bundler](#bundler)
-  - [Rails](#rails)
-  - [Rake](#rake)
-  - [MySQL](#mysql)
-- [Advanced Tools](#advanced-tools)
-  - [Language Servers](#language-servers)
-  - [Profiling Tools](#profiling-tools)
-    - [Memory profiling](#memory-profiling)
-    - [Call-stack profiling](#call-stack-profiling)
 
 ## Prerequisites
 
@@ -63,8 +52,6 @@ We highly recommend using Github Codespaces to get started, especially if you're
 By default, Github Codespaces will open an IDE for you in a browser tab. This is a convenient feature to be sure, but it isn't for everyone. Luckily, you can open your Codespace in Visual Studio Code on desktop, all you need is the Codespaces extension installed on your local. You aren't limited to just vscode either, you can open a Codespace with a number of other tools.
 
 Additionally, you aren't limited to running the project from Codespaces either, the underlying technology Codespaces is using is called *devcontainers*, and there's nothing stopping you from running devcontainers locally if you would prefer.
-
-### Kickoff
 
 Hopefully, you've been able to open a development environment without issue & are able to pick up your first issue! Unfortunately accidents do happen, and if you do run into problems as you set things up then don't hesitate to send your mentor a slack.
 
@@ -107,72 +94,3 @@ There are automated tests and checks that run on every Pull Request (PR) to the 
 When you create a PR, Github Actions will run the project's RSpec tests to ensure that the code works as expected and passes all tests. It will also run the Pronto runners for brakeman, reek, flay, and standard ruby. Each of these runners checks for different things, such as potential security issues, code smells, duplication, and adherence to the project's code style guidelines. If any of these runners fail, the PR will not be able to be merged until the issues are resolved.
 
 By running these checks automatically on every PR, we can catch issues early on in the development process, before they make it into the codebase. This helps to ensure that the code is high-quality, maintainable, and adheres to best practices.
-
-## Basic Rails Tools
-
-The development environment includes several basic Rails tools that you will be using frequently as you work on the project. These tools include:
-
-### Bundler
-
-Bundler is a dependency manager for Ruby that is used to manage gem dependencies. Bundler ensures that all the gems required by the project are installed and available, and can be used to manage gem versions as well. The development environment will install the projects dependencies for you with Bundler, but as you work on the project you will encounter Bundler as you manage the gems required for your code.
-
-### Rails
-
-Rails is a web application framework written in Ruby that provides a set of tools and conventions for building web applications. Some of the basic Rails commands you will be using include:
-
-- `bin/rails server` - Starts the development server
-- `bin/rails console` - Opens a console for interacting with the application
-- `bin/rails generate` - Generates new files (models, controllers, views, etc.)
-
-Follow through to the [Ruby on Rails Guides (v4.2)](https://guides.rubyonrails.org/v4.2/) for more information about Rails & it's features.
-
-### Rake
-
-Rake is a build automation tool that is used to automate tasks in the onboarding project. Rake is often used to run database migrations, seed the database with initial data, and perform other tasks related to the development environment. Some of the common Rake tasks you will be using include:
-
-- `bin/rake db:migrate` - Runs database migrations
-- `bin/rake db:seed` - Seeds the database with initial data
-- `bin/rake spec` - Runs all tests in the project
-- `bin/rake --tasks` - Lists all available rake tasks
-
-### MySQL
-
-The project provides for you a MySQL server that has already been configured to be used by the rails application in your development environment. You can access the MySQL server by running the `mysql` command, which will open up the MySQL console using the development database by default, pass the `-D` option to specify another database.
-
-These are just a few of the basic Rails tools you will be using in the onboarding project. Each of these tools is designed to make your development experience smoother and more productive, and will help you build a solid foundation in Ruby on Rails.
-
-## Advanced Tools
-
-The development environment includes several advanced tools that are designed to help you write better code, find performance bottlenecks, and adhere to best practices. Some of these tools include:
-
-### Language Servers
-
-A Language Server is a tool that provides real-time analysis of your code as you write it, highlighting errors and suggesting improvements. The development environment includes the Ruby LSP, which is a language server for Ruby that provides advanced code analysis and navigation features. The Standard Ruby gem is also included, which is a code style linter that checks your code for adherence to Ruby coding standards. When used in conjunction with a code editor that supports language servers, such as Visual Studio Code, these tools can help you write better, cleaner code and adhere to best practices.
-
-### Profiling Tools
-
-Profiling tools are used to identify performance bottlenecks and areas of your code that are slow or resource-intensive. The development environment includes several profiling tools that you can use to analyze your code and identify areas for improvement. One of these tools is Rack Mini Profiler, which is a small profiling tool that can be used to measure the performance of your code and identify areas that are slow or resource-intensive. Rack Mini Profiler is integrated with the project and can be accessed by adding the `?pp=profile` parameter to the end of any request URL.
-
-#### Memory profiling
-The dev environment includes the `memory_profiler` gem, which is a tool that can be used to identify memory leaks and excessive memory usage in your code. By analyzing the memory usage of your code as it runs. Memory Profiler can be accessed by adding the `?pp=profile-memory` parameter to the end of any request URL.
-
-Memory Profiler can be used on its own to profile arbitrary blocks of code:
-```
-report = MemoryProfiler.report do
-  # code to be profiled
-end
-
-report.pretty_print
-```
-
-This code will run the specified code and generate a report that shows the memory usage for each line of code. By analyzing this report, you can identify areas where memory usage is excessive and make changes to optimize the code. Overall, memory_profiler is a powerful tool that can help you write more efficient, high-performance code.
-
-#### Call-stack profiling
-The development environment includes the `stackprof` gem, which is a tool that can be used to analyze the performance of your code from the call-stack, Stack Profiler can help you identify areas where your code is spending a lot of time and make optimizations to improve performance. Stack Profiler can be used by adding the `?pp=flamegraph` parameter to the end of any request URL.
-
-Stack Profiler can be used on its own to profile arbitrary blocks of code as well:
-```
-StackProf.run(mode: :cpu, interval: 5000) do
-  # code to be profiled
-end
-```
